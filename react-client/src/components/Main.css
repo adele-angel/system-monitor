@@ -1,0 +1,17 @@
+main {
+	color: #ffffff;
+	background-color: rgb(32, 32, 32);
+	box-shadow: 0 0.5rem 1rem 0 rgba(30, 54, 44, 0.2), 0 1rem 13.5rem 0 rgba(40, 109, 61, 0.19);
+}
+
+header {
+	background-color: rgb(20, 20, 20);
+	font-size: medium;
+	color: rgb(163, 163, 163);
+}
+header h3 {
+	text-transform: uppercase;
+}
+header .header-date {
+	margin-bottom: 3rem;
+}
