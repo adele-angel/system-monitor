@@ -66,7 +66,11 @@ if (cluster.isMaster) {
 	const io = socketio(server);
 
 	// Use redis adapter with socket.io middleware
-	io.adapter(io_redis({ host: 'localhost', port: keys.redisPORT }));
+	const redis = require('redis').createClient;
+	const redisClient = redis(keys.redisPORT, keys.redisURI, {
+		auth_pass: keys.redisAUTH,
+	});
+	io.adapter(io_redis({ redisClient }));
 
 	// On connection, send the socket over to socketMain
 	io.on('connection', function (socket) {
