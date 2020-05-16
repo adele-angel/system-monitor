@@ -13,8 +13,10 @@ const socketio = require('socket.io');
 const io_redis = require('socket.io-redis');
 const farmhash = require('farmhash');
 
+const socketMain = require('./util/socketMain');
 const keys = require('./config/keys');
 const port = keys.port;
+const socketClient = require('./client')(port);
 
 const num_processes = require('os').cpus().length;
 
@@ -63,8 +65,14 @@ if (cluster.isMaster) {
 	const server = app.listen(0, 'localhost');
 	const io = socketio(server);
 
-  // Use redis adapter with socket.io middleware
+	// Use redis adapter with socket.io middleware
 	io.adapter(io_redis({ host: 'localhost', port: keys.redisPORT }));
+
+	// On connection, send the socket over to socketMain
+	io.on('connection', function (socket) {
+		socketMain(io, socket);
+		console.log(`connected to worker: ${cluster.worker.id}`);
+	});
 
 	// Listen to messages sent from the master and ignore everything else
 	process.on('message', function (message, connection) {
