@@ -2,6 +2,6 @@ module.exports = {
 	port: process.env.PORT || 8080,
 	mongoURI: 'mongo uri',
 	redisURI: 'redis uri',
-	redisPORT: 'redis port',
+	redisPORT: '6379',
 	redisAUTH: 'redis password',
 };
