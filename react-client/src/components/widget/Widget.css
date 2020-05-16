@@ -1,0 +1,50 @@
+.bold {
+	font-weight: bold;
+}
+
+.widget {
+	position: relative;
+}
+
+.cpu,
+.memory,
+.disk,
+.battery {
+	position: relative;
+	text-align: center;
+}
+
+.cpu-text,
+.memory-text {
+	position: absolute;
+	transform: translate(-45%, -40%);
+	top: 50%;
+	left: 50%;
+	font-size: larger;
+}
+
+.canvas-wrapper {
+	position: relative;
+	display: block;
+	padding-top: 1rem;
+}
+
+.network {
+	text-align: center;
+}
+
+.separator {
+	display: block;
+	background-color: rgb(49, 49, 49);
+	height: 0.095rem;
+	width: 90%;
+}
+
+.info h5,
+.battery h5 {
+	color: rgb(175, 175, 175);
+}
+
+.battery {
+	text-align: left;
+}
