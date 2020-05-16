@@ -15,7 +15,7 @@ const farmhash = require('farmhash');
 
 const socketMain = require('./util/socketMain');
 const keys = require('./config/keys');
-const port = keys.port;
+const port = process.env.PORT || 8080;
 const socketClient = require('./client')(port);
 
 const num_processes = require('os').cpus().length;
