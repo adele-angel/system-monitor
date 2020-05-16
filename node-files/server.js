@@ -63,7 +63,7 @@ if (cluster.isMaster) {
 	const server = app.listen(0, 'localhost');
 	const io = socketio(server);
 
-	// Use redis adapter with socket.io middleware
+  // Use redis adapter with socket.io middleware
 	io.adapter(io_redis({ host: 'localhost', port: keys.redisPORT }));
 
 	// Listen to messages sent from the master and ignore everything else
