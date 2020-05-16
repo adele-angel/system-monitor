@@ -13,6 +13,16 @@ const Machine = new Schema({
 	cpuModel: String,
 	numCores: Number,
 	cpuSpeed: Number,
+	fsTotal: Number,
+	fsUsed: Number,
+	fsUsage: Number,
+	isActive: Boolean,
+	battery: {
+		hasbattery: Boolean,
+		ischarging: Boolean,
+		voltage: Number,
+		percent: Number,
+	},
 });
 
 module.exports = mongoose.model('Machine', Machine);
