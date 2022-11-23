@@ -21,7 +21,7 @@
     "farmhash": "^3.1.0",
     "mongoose": "^5.9.14",
     "redis": "^3.0.2",
-    "socket.io": "^2.3.0",
+    "socket.io": "^2.5.0",
     "socket.io-client": "^2.3.0",
     "socket.io-redis": "^5.2.0",
     "systeminformation": "^4.26.1"
