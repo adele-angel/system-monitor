@@ -17,7 +17,7 @@
   "author": "Adele Angel",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "farmhash": "^3.1.0",
     "mongoose": "^5.9.14",
     "redis": "^3.0.2",
